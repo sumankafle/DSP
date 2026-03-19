@@ -11,7 +11,7 @@ and readable enough to learn from.
 ## What's here
 
 ```
-├── include/       Headers — public API
+├── include/       Headers
 ├── src/           Core DSP implementations
 ├── common/        Shared macros and utilities
 ├── test/          Unit tests (one binary per module)
@@ -141,35 +141,35 @@ int main(void)
 If you're working through DSP for the first time, here's a reasonable
 order to read the code:
 
-1. **`signal_gen.c`** — Start here. Simple cosine/impulse generation.
+1. **`signal_gen.c`** Start here. Simple cosine/impulse generation.
    Gets you comfortable with sampled signals and normalized frequency.
 
-2. **`stats.c`** — Basic signal analysis. Mean, variance, RMS — the
+2. **`stats.c`**  Basic signal analysis. Mean, variance, RMS — the
    stuff you need before anything else makes sense.
 
-3. **`dft.c` (DFT only)** — Read the `dft()` function first. It's
+3. **`dft.c` (DFT only)** Read the `dft()` function first. It's
    the O(N²) brute-force transform, short enough to follow every
    multiplication. Then look at how the twiddle factors work.
 
-4. **`window.c`** — Window functions. Understand why we window before
+4. **`window.c`** Window functions. Understand why we window before
    taking an FFT. Compare Hamming vs Hanning vs Blackman by looking
    at sidelobe levels in the frequency domain.
 
-5. **`dft.c` (FFT)** — Now tackle `fft()`. Radix-2 decimation-in-time
+5. **`dft.c` (FFT)** Now tackle `fft()`. Radix-2 decimation-in-time
    with twiddle factor caching and bit-reversal. This is the core
    algorithm that makes everything else practical.
 
-6. **`filter.c`** — FIR and IIR filtering. Start with `fir_filter()`
+6. **`filter.c`** FIR and IIR filtering. Start with `fir_filter()`
    (sample-by-sample) to understand convolution. Then look at the
    IIR biquad cascade for recursive filtering.
 
-7. **`noise.c`** — Box-Muller transform for Gaussian noise from
+7. **`noise.c`** Box-Muller transform for Gaussian noise from
    uniform samples. Short and elegant.
 
-8. **`median.c`** — Nonlinear filtering. The conditional median
+8. **`median.c`** Nonlinear filtering. The conditional median
    filter removes spikes that linear filters can't handle cleanly.
 
-9. **`correlation.c`** — Ties it together. Cross-correlation is
+9. **`correlation.c`** Ties it together. Cross-correlation is
    fundamental to signal detection, timing estimation, and
    matched filtering.
 
