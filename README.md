@@ -174,7 +174,7 @@ order to read the code:
    matched filtering.
 
 The `common/vector_ops.h` macros show a C technique for type-generic
-vector operations before `_Generic` existed — worth reading if
+vector operations before `_Generic` existed, worth reading if
 you're interested in C idioms.
 
 ## Origins
