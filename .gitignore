@@ -18,6 +18,7 @@
 # Directories created by this project
 obj/
 bin/
+data/
 
 # Editor/IDE
 .vscode/
