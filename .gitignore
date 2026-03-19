@@ -1,0 +1,47 @@
+# Ignore build artefacts for C projects
+
+# Object files
+*.o
+*.lo
+
+# Static and shared libraries
+!*.a
+*.so
+
+# Dependency files
+*.d
+
+# Executables
+*.out
+*.exe
+
+# Directories created by this project
+obj/
+bin/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+
+# macOS
+.DS_Store
+
+# Logs and temporary
+*.log
+
+# Coverage and profiling
+.coverage
+coverage/
+
+# Core dumps
+core
+core.*
+
+# Misc
+tags
